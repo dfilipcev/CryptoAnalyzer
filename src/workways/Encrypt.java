@@ -28,7 +28,7 @@ public class Encrypt extends Cryptanalysis {
                         //Если нашли подходящий символ
                         if (Character.valueOf(symbol).equals(RU_ALPHABET[j])) {
                             //То расчитываем его позицию
-                            int position = (j - key) % RU_ALPHABET.length;
+                            int position = (j + key) % RU_ALPHABET.length;
                             //Если символ в врехнем регистре, то добавляем сдвиг в верхнем регистре
                             if (Character.isUpperCase(symbols[i])) {
                                 symbols[i] = Character.toUpperCase(RU_ALPHABET[position]);
