@@ -1,6 +1,7 @@
 package user;
 
 import constants.WorkWays;
+import workways.Decrypt;
 import workways.Encrypt;
 
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class User {
     }
 
     public void choosingWorkWay(Scanner scanner) {
-        System.out.println(GREETING);
+        System.out.println(WORKING_WAYS + GREETING);
         String consoleInput;
         while (scanner.hasNextLine()) {
             try {
@@ -31,7 +32,7 @@ public class User {
                     break;
                     //Если 2, то делаем расшифровку
                 } else if (workWay == WorkWays.DECRYPT.getNumber()) {
-                    System.out.println("go decrypt!");
+                    Decrypt.decryption();
                     break;
                     //Если 3, то делаем brute_force
                 } else if (workWay == WorkWays.BRUTE_FORCE.getNumber()) {
