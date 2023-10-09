@@ -1,13 +1,9 @@
 package constants;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 public class Alphabets {
 
-    public static final Set<Character> RU_ALPHABET = new HashSet<>(Arrays.asList('а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з',
+    public static final char[] RU_ALPHABET = new char[] {'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з',
                                       'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
-                                      'ъ', 'ы', 'ь', 'э', 'я', '.', ',', '«', '»', '"', '\'', ':', '!', '?', ' '));
+                                      'ъ', 'ы', 'ь', 'э', 'я', '.', ',', '«', '»', '"', '\'', ':', '!', '?', ' '};
 
 }
