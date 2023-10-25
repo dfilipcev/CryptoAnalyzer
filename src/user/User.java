@@ -1,6 +1,7 @@
 package user;
 
 import constants.WorkWays;
+import workways.BruteForce;
 import workways.Decrypt;
 import workways.Encrypt;
 
@@ -28,15 +29,15 @@ public class User {
                     System.out.println(REPEAT);
                     //Если 1, то делаем шифровку
                 } else if (workWay == WorkWays.ENCRYPT.getNumber()) {
-                    Encrypt.encryption();
+                    Encrypt.encrypt();
                     break;
                     //Если 2, то делаем расшифровку
                 } else if (workWay == WorkWays.DECRYPT.getNumber()) {
-                    Decrypt.decryption();
+                    Decrypt.decrypt();
                     break;
                     //Если 3, то делаем brute_force
                 } else if (workWay == WorkWays.BRUTE_FORCE.getNumber()) {
-                    System.out.println("go brute force!");
+                    BruteForce.bruteForce();
                     break;
                 }
             } catch (NumberFormatException numberFormatException) {
