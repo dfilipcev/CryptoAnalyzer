@@ -56,6 +56,10 @@ public class Cryptanalysis {
         return path;
     }
 
+    public static Path getFrequencyDictionary() {
+        return Path.of("src/files/freqdictionary.txt").toAbsolutePath();
+    }
+
     protected static int getKey(Scanner scanner) {
         System.out.println(INPUT_KEY);
         int key = 0;
