@@ -1,7 +1,7 @@
 package constants;
 
 public class Phrases {
-    public static final String GREETING = "\nПожалуйста, выбери режим работы программы и введи цифру от 1 до 4.\nЕсли хочешь выйти - напиши \"exit\".";
+    public static final String GREETING = "\nПожалуйста, выбери режим работы программы и введи цифру от 1 до 3.\nЕсли хочешь выйти - напиши \"exit\".";
     public static final String WORKING_WAYS = "Режимы работы: \n1 - Шифровка \n2 - Расшифровка \n3 - Brute force";
     public static final String EXIT = "exit";
     public static final String REPEAT = "У программы есть 4 режима. Введи цифру, соответствующую режиму работы.\nЕсли хочешь выйти - напиши \"exit\".";
