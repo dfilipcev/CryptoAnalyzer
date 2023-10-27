@@ -2,13 +2,14 @@ package workways;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Set;
 
 import static checkers.MatchesChecker.wordIsInFreqDictionary;
 import static constants.Alphabets.RU_ALPHABET;
 import static converters.SetConverter.convertToSet;
-import static converters.StringArrayConverter.convertToStringArray;
-import static filework.Reader.*;
+import static filework.Reader.readCharsFromFile;
+import static filework.Reader.readFreqDictionary;
 import static filework.Writer.writeInFile;
 
 public class BruteForce extends Cryptanalysis {
@@ -20,6 +21,7 @@ public class BruteForce extends Cryptanalysis {
             char[] symbols = readCharsFromFile(inputPath);
             Set<String> dictionary = readFreqDictionary(freqDictionary);
             Set<Character> letters = convertToSet(RU_ALPHABET);
+            char[] encryptedSymbols = new char[symbols.length];
 
             int key = 1;
             while (key < letters.size()) {
@@ -31,21 +33,20 @@ public class BruteForce extends Cryptanalysis {
                             if (Character.valueOf(symbol).equals(RU_ALPHABET[j])) {
                                 //То расчитываем его позицию
                                 int position = (j - key + RU_ALPHABET.length) % RU_ALPHABET.length;
-                                symbols[i] = RU_ALPHABET[position];
+                                encryptedSymbols[i] = RU_ALPHABET[position];
                                 break;
                             }
                         }
                     }
                 }
-                //Конвертируем чары в массив строк, исключая все символы, кроме букв
-                String[] words = convertToStringArray(symbols);
-                if (wordIsInFreqDictionary(words, dictionary)) {
+                //Если расшифрованная строка содержит слова из словаря - заканчиваем перебор
+                if (wordIsInFreqDictionary(encryptedSymbols, dictionary)) {
                     break;
                 } else {
                     key++;
                 }
             }
-            writeInFile(symbols, outputPath);
+            writeInFile(encryptedSymbols, outputPath);
         } catch (IOException ioException) {
             System.out.println(ioException.getMessage());
         }
